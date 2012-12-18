@@ -17,7 +17,7 @@ def debug_shell():
     pdb.set_trace()
     
 def provision_box():
-    
+    sudo('apt-get update')
     install_base()
     install_python()
     install_setuptools()
