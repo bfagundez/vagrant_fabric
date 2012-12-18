@@ -22,7 +22,17 @@ def provision_box():
     install_python()
     install_setuptools()
     install_pip()
+    #development db stuff
+    install_sqlite_driver_python()
+    install_mysql_driver_python()
     #install_requirements()
+    
+def install_sqlite_driver_python():
+    apt_get('sqlite libsqlite3-dev')
+    sudo('easy_install pysqlite')
+
+def install_mysql_driver_python():
+    sudo('easy_install mysql-python')
     
 def install_base():
     apt_get('make gcc git-core subversion python-mysqldb mysql-server-core-5.1 mysql-client-core-5.1 libmysqlclient-dev')
